@@ -1,0 +1,87 @@
+cells:
+  - kind: 1
+    languageId: markdown
+    value: Check the number of records where the state is Alaska.
+    metadata: {}
+  - kind: 2
+    languageId: sql
+    value: |-
+      SELECT
+      COUNT(*) AS totalrecords
+      FROM countypres
+      WHERE state = 'ALASKA';
+    metadata: {}
+  - kind: 1
+    languageId: markdown
+    value: Check the number of unique FIPS codes for Alaska.
+    metadata: {}
+  - kind: 2
+    languageId: sql
+    value: |-
+      SELECT
+          COUNT(DISTINCT(county_fips))
+      FROM countypres
+      WHERE state = 'ALASKA';
+    metadata: {}
+  - kind: 1
+    languageId: markdown
+    value: Update county_name for records from ALASKA, using the FIPS information
+      from https://www.weather.gov/media/pimar/FIPS/ak_cnty.pdf.
+    metadata: {}
+  - kind: 2
+    languageId: sql
+    value: |
+      UPDATE countypres
+      SET county_name = 
+          CASE
+              WHEN county_fips = '20216' THEN 'Aleutians West'
+              WHEN county_fips = '20213' THEN 'Aleutians East'
+              WHEN county_fips = '02164' THEN 'Lake and Peninsula'
+              WHEN county_fips = '02060' THEN 'Bristol Bay'
+              WHEN county_fips = '02150' THEN 'Kodiak Island'
+              WHEN county_fips = '02122' THEN 'Kenai Peninsula'
+              WHEN county_fips = '02020' THEN 'Anchorage'
+              WHEN county_fips = '02063' THEN 'Chugash'
+              WHEN county_fips = '02282' THEN 'Yakutat'
+              WHEN county_fips = '02230' THEN 'Skagway'
+              WHEN county_fips = '02100' THEN 'Haines'
+              WHEN county_fips = '02110' THEN 'Juneau'
+              WHEN county_fips = '02195' THEN 'Petersburg Borough'
+              WHEN county_fips = '02275' THEN 'Wrangell'
+              WHEN county_fips = '02201' THEN 'Sitka City and Borough'
+              WHEN county_fips = '02220' THEN 'Sitka'
+              WHEN county_fips = '02180' THEN 'Nome'
+              WHEN county_fips = '02185' THEN 'North Slope'
+              WHEN county_fips = '02188' THEN 'Northwest Arctic'
+              WHEN county_fips = '02220' THEN 'Sitka'
+              WHEN county_fips = '02240' THEN 'Southeast Fairbanks'
+              WHEN county_fips = '02261' THEN 'Valdez-Cordova'
+              WHEN county_fips = '02270' THEN 'Wade Hampton'
+              WHEN county_fips = '02280' THEN 'Yakutat'
+              WHEN county_fips = '02290' THEN 'Yukon-Koyukuk'
+              WHEN county_fips = '02130' THEN 'Ketchikan Gateway'
+              WHEN county_fips = '02068' THEN 'Denali'
+              WHEN county_fips = '02090' THEN 'Fairbanks North Star'
+              WHEN county_fips = '02170' THEN 'Matanuska-Susitna'
+              WHEN county_fips = '02122' THEN 'Kenai Peninsula'
+              WHEN county_fips = '02158' THEN 'Kusilvak'
+              WHEN county_fips = '02105' THEN 'Hoonah-Angoon'
+              WHEN county_fips = '02198' THEN 'Prince of Wales-Hyder'
+              WHEN county_fips = '02230' THEN 'Skagway'
+              WHEN county_fips = '02201' THEN 'Sitka'
+              WHEN county_fips = '02220' THEN 'Sitka'
+              WHEN county_fips = '02240' THEN 'Southeast Fairbanks'
+              WHEN county_fips = '02261' THEN 'Valdez-Cordova'
+              WHEN county_fips = '02270' THEN 'Wade Hampton'
+              WHEN county_fips = '02070' THEN 'Dillingham'
+              WHEN county_fips = '02050' THEN 'Bethel'
+              WHEN county_fips = '02066' THEN 'Copper River'
+              ELSE county_name
+          END
+    metadata: {}
+metadata:
+  conn:
+    id: c9_XhuNfYSo_jVIVW4z_c
+    name: PostgreSQL
+  database: bishopsTwitter
+  schema: public
