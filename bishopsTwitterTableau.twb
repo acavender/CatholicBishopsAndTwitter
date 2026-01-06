@@ -1,0 +1,1214 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20253.25.1210.1815                               -->
+<workbook original-version='18.1' source-build='2025.3.1 (20253.25.1210.1815)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='results2000+' inline='true' name='federated.0e2mqfp084dl3118njkn11mni39e' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='countypres_2000-2024_leading_zeroes' name='textscan.1p6epj61mwmg6q1ff281j1ic4y66'>
+            <connection class='textscan' directory='/Users/acavender/Documents/GitHub projects/CatholicBishopsAndTwitter' filename='countypres_2000-2024_leading_zeroes.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='counties_by_diocese' name='textscan.1y476b512yq3q51choopo0je3g2u'>
+            <connection class='textscan' directory='/Users/acavender/Documents/GitHub projects/CatholicBishopsAndTwitter/original_data_sources' filename='counties_by_diocese.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.1p6epj61mwmg6q1ff281j1ic4y66' name='countypres_2000-2024_leading_zeroes.csv' table='[countypres_2000-2024_leading_zeroes#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='year' ordinal='0' />
+              <column datatype='string' name='state' ordinal='1' />
+              <column datatype='string' name='state_po' ordinal='2' />
+              <column datatype='string' name='county_name' ordinal='3' />
+              <column datatype='integer' name='county_fips' ordinal='4' />
+              <column datatype='string' name='office' ordinal='5' />
+              <column datatype='string' name='candidate' ordinal='6' />
+              <column datatype='string' name='party' ordinal='7' />
+              <column datatype='integer' name='candidatevotes' ordinal='8' />
+              <column datatype='integer' name='totalvotes' ordinal='9' />
+              <column datatype='date' name='version' ordinal='10' />
+              <column datatype='string' name='mode' ordinal='11' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1y476b512yq3q51choopo0je3g2u' name='counties_by_diocese.csv' table='[counties_by_diocese#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='STATEFP' ordinal='0' />
+              <column datatype='integer' name='COUNTYFP' ordinal='1' />
+              <column datatype='integer' name='COUNTYNS' ordinal='2' />
+              <column datatype='integer' name='GEOID' ordinal='3' />
+              <column datatype='string' name='NAME' ordinal='4' />
+              <column datatype='string' name='NAMELSAD' ordinal='5' />
+              <column datatype='integer' name='LSAD' ordinal='6' />
+              <column datatype='string' name='State_Name' ordinal='7' />
+              <column datatype='string' name='State_Code' ordinal='8' />
+              <column datatype='integer' name='FIPS' ordinal='9' />
+              <column datatype='string' name='county_state' ordinal='10' />
+              <column datatype='string' name='Diocese' ordinal='11' />
+              <column datatype='string' name='Diocese_Detail' ordinal='12' />
+              <column datatype='string' name='Province_Detail' ordinal='13' />
+              <column datatype='string' name='geometry' ordinal='14' />
+              <column datatype='string' name='Province' ordinal='15' />
+              <column datatype='integer' name='Diocese_Color_Code' ordinal='16' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[countypres_2000-2024_leading_zeroes.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[counties_by_diocese.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[year]</local-name>
+            <parent-name>[countypres_2000-2024_leading_zeroes.csv]</parent-name>
+            <remote-alias>year</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>state</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[state]</local-name>
+            <parent-name>[countypres_2000-2024_leading_zeroes.csv]</parent-name>
+            <remote-alias>state</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>state_po</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[state_po]</local-name>
+            <parent-name>[countypres_2000-2024_leading_zeroes.csv]</parent-name>
+            <remote-alias>state_po</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>county_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[county_name]</local-name>
+            <parent-name>[countypres_2000-2024_leading_zeroes.csv]</parent-name>
+            <remote-alias>county_name</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>county_fips</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[county_fips]</local-name>
+            <parent-name>[countypres_2000-2024_leading_zeroes.csv]</parent-name>
+            <remote-alias>county_fips</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>office</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[office]</local-name>
+            <parent-name>[countypres_2000-2024_leading_zeroes.csv]</parent-name>
+            <remote-alias>office</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>candidate</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[candidate]</local-name>
+            <parent-name>[countypres_2000-2024_leading_zeroes.csv]</parent-name>
+            <remote-alias>candidate</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>party</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[party]</local-name>
+            <parent-name>[countypres_2000-2024_leading_zeroes.csv]</parent-name>
+            <remote-alias>party</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>candidatevotes</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[candidatevotes]</local-name>
+            <parent-name>[countypres_2000-2024_leading_zeroes.csv]</parent-name>
+            <remote-alias>candidatevotes</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>totalvotes</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[totalvotes]</local-name>
+            <parent-name>[countypres_2000-2024_leading_zeroes.csv]</parent-name>
+            <remote-alias>totalvotes</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>version</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[version]</local-name>
+            <parent-name>[countypres_2000-2024_leading_zeroes.csv]</parent-name>
+            <remote-alias>version</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>mode</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[mode]</local-name>
+            <parent-name>[countypres_2000-2024_leading_zeroes.csv]</parent-name>
+            <remote-alias>mode</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>STATEFP</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[STATEFP]</local-name>
+            <parent-name>[counties_by_diocese.csv]</parent-name>
+            <remote-alias>STATEFP</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>COUNTYFP</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[COUNTYFP]</local-name>
+            <parent-name>[counties_by_diocese.csv]</parent-name>
+            <remote-alias>COUNTYFP</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>COUNTYNS</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[COUNTYNS]</local-name>
+            <parent-name>[counties_by_diocese.csv]</parent-name>
+            <remote-alias>COUNTYNS</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GEOID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[GEOID]</local-name>
+            <parent-name>[counties_by_diocese.csv]</parent-name>
+            <remote-alias>GEOID</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NAME</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[NAME]</local-name>
+            <parent-name>[counties_by_diocese.csv]</parent-name>
+            <remote-alias>NAME</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NAMELSAD</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[NAMELSAD]</local-name>
+            <parent-name>[counties_by_diocese.csv]</parent-name>
+            <remote-alias>NAMELSAD</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LSAD</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[LSAD]</local-name>
+            <parent-name>[counties_by_diocese.csv]</parent-name>
+            <remote-alias>LSAD</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>State_Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[State_Name]</local-name>
+            <parent-name>[counties_by_diocese.csv]</parent-name>
+            <remote-alias>State_Name</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>State_Code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[State_Code]</local-name>
+            <parent-name>[counties_by_diocese.csv]</parent-name>
+            <remote-alias>State_Code</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FIPS</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[FIPS]</local-name>
+            <parent-name>[counties_by_diocese.csv]</parent-name>
+            <remote-alias>FIPS</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>county_state</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[county_state]</local-name>
+            <parent-name>[counties_by_diocese.csv]</parent-name>
+            <remote-alias>county_state</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Diocese</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Diocese]</local-name>
+            <parent-name>[counties_by_diocese.csv]</parent-name>
+            <remote-alias>Diocese</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Diocese_Detail</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Diocese_Detail]</local-name>
+            <parent-name>[counties_by_diocese.csv]</parent-name>
+            <remote-alias>Diocese_Detail</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Province_Detail</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Province_Detail]</local-name>
+            <parent-name>[counties_by_diocese.csv]</parent-name>
+            <remote-alias>Province_Detail</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>geometry</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[geometry]</local-name>
+            <parent-name>[counties_by_diocese.csv]</parent-name>
+            <remote-alias>geometry</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Province</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Province]</local-name>
+            <parent-name>[counties_by_diocese.csv]</parent-name>
+            <remote-alias>Province</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Diocese_Color_Code</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Diocese_Color_Code]</local-name>
+            <parent-name>[counties_by_diocese.csv]</parent-name>
+            <remote-alias>Diocese_Color_Code</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Countyfp' datatype='integer' name='[COUNTYFP]' role='measure' type='quantitative' />
+      <column caption='Countyns' datatype='integer' name='[COUNTYNS]' role='measure' type='quantitative' />
+      <column datatype='string' name='[Diocese]' role='dimension' semantic-role='' type='nominal' />
+      <column caption='Diocese Color Code' datatype='integer' name='[Diocese_Color_Code]' role='dimension' type='ordinal' />
+      <column caption='Diocese Detail' datatype='string' name='[Diocese_Detail]' role='dimension' type='nominal' />
+      <column caption='Fips' datatype='integer' name='[FIPS]' role='measure' type='quantitative' />
+      <column caption='Geoid' datatype='integer' name='[GEOID]' role='measure' type='quantitative' />
+      <column caption='Lsad' datatype='integer' name='[LSAD]' role='measure' type='quantitative' />
+      <column caption='Namelsad' datatype='string' name='[NAMELSAD]' role='dimension' type='nominal' />
+      <column caption='Name' datatype='string' name='[NAME]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Province]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Province Detail' datatype='string' name='[Province_Detail]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Statefp' datatype='integer' name='[STATEFP]' role='measure' type='quantitative' />
+      <column caption='State Code' datatype='string' name='[State_Code]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='State Name' datatype='string' name='[State_Name]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='counties_by_diocese.csv' datatype='table' name='[__tableau_internal_object_id__].[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]' role='measure' type='quantitative' />
+      <column caption='countypres_2000-2024_leading_zeroes.csv' datatype='table' name='[__tableau_internal_object_id__].[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]' role='measure' type='quantitative' />
+      <column caption='Candidate' datatype='string' name='[candidate]' role='dimension' type='nominal' />
+      <column caption='Candidatevotes' datatype='integer' name='[candidatevotes]' role='measure' type='quantitative' />
+      <column caption='County Fips' datatype='integer' name='[county_fips]' role='measure' type='quantitative' />
+      <column caption='County Name' datatype='string' name='[county_name]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+      <column caption='County State' datatype='string' name='[county_state]' role='dimension' semantic-role='' type='nominal' />
+      <column caption='Geometry' datatype='string' name='[geometry]' role='dimension' type='nominal' />
+      <column caption='Mode' datatype='string' name='[mode]' role='dimension' type='nominal' />
+      <column caption='Office' datatype='string' name='[office]' role='dimension' type='nominal' />
+      <column caption='Party' datatype='string' name='[party]' role='dimension' type='nominal' />
+      <column caption='State' datatype='string' name='[state]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='State Po' datatype='string' name='[state_po]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Totalvotes' datatype='integer' name='[totalvotes]' role='measure' type='quantitative' />
+      <column caption='Version' datatype='date' name='[version]' role='dimension' type='ordinal' />
+      <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
+      <drill-paths>
+        <drill-path name='State'>
+          <field>[state]</field>
+          <field>[county_name]</field>
+        </drill-path>
+      </drill-paths>
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='/var/folders/n2/gxqn4kd91bldrrq2jzgxy51c0000gn/T/tableau-temp/#TableauTemp_06k07bx1ymzzoq13py3n60lw6vyd.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='01/06/2026 05:41:07 PM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3' table='[Extract].[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]' type='table' />
+            <relation name='counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3' table='[Extract].[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]' type='table' />
+          </relation>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[year]</local-name>
+              <parent-name>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</parent-name>
+              <remote-alias>year</remote-alias>
+              <ordinal>0</ordinal>
+              <family>countypres_2000-2024_leading_zeroes.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>state</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[state]</local-name>
+              <parent-name>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</parent-name>
+              <remote-alias>state</remote-alias>
+              <ordinal>1</ordinal>
+              <family>countypres_2000-2024_leading_zeroes.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>64</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>state_po</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[state_po]</local-name>
+              <parent-name>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</parent-name>
+              <remote-alias>state_po</remote-alias>
+              <ordinal>2</ordinal>
+              <family>countypres_2000-2024_leading_zeroes.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>64</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>county_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[county_name]</local-name>
+              <parent-name>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</parent-name>
+              <remote-alias>county_name</remote-alias>
+              <ordinal>3</ordinal>
+              <family>countypres_2000-2024_leading_zeroes.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4763</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>county_fips</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[county_fips]</local-name>
+              <parent-name>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</parent-name>
+              <remote-alias>county_fips</remote-alias>
+              <ordinal>4</ordinal>
+              <family>countypres_2000-2024_leading_zeroes.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10744</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>office</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[office]</local-name>
+              <parent-name>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</parent-name>
+              <remote-alias>office</remote-alias>
+              <ordinal>5</ordinal>
+              <family>countypres_2000-2024_leading_zeroes.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>candidate</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[candidate]</local-name>
+              <parent-name>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</parent-name>
+              <remote-alias>candidate</remote-alias>
+              <ordinal>6</ordinal>
+              <family>countypres_2000-2024_leading_zeroes.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>18</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>party</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[party]</local-name>
+              <parent-name>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</parent-name>
+              <remote-alias>party</remote-alias>
+              <ordinal>7</ordinal>
+              <family>countypres_2000-2024_leading_zeroes.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>candidatevotes</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[candidatevotes]</local-name>
+              <parent-name>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</parent-name>
+              <remote-alias>candidatevotes</remote-alias>
+              <ordinal>8</ordinal>
+              <family>countypres_2000-2024_leading_zeroes.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>11394</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>totalvotes</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[totalvotes]</local-name>
+              <parent-name>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</parent-name>
+              <remote-alias>totalvotes</remote-alias>
+              <ordinal>9</ordinal>
+              <family>countypres_2000-2024_leading_zeroes.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>24402</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>version</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[version]</local-name>
+              <parent-name>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</parent-name>
+              <remote-alias>version</remote-alias>
+              <ordinal>10</ordinal>
+              <family>countypres_2000-2024_leading_zeroes.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>mode</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[mode]</local-name>
+              <parent-name>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</parent-name>
+              <remote-alias>mode</remote-alias>
+              <ordinal>11</ordinal>
+              <family>countypres_2000-2024_leading_zeroes.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>46</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>STATEFP</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[STATEFP]</local-name>
+              <parent-name>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</parent-name>
+              <remote-alias>STATEFP</remote-alias>
+              <ordinal>12</ordinal>
+              <family>counties_by_diocese.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>52</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>COUNTYFP</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[COUNTYFP]</local-name>
+              <parent-name>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</parent-name>
+              <remote-alias>COUNTYFP</remote-alias>
+              <ordinal>13</ordinal>
+              <family>counties_by_diocese.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>248</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>COUNTYNS</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[COUNTYNS]</local-name>
+              <parent-name>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</parent-name>
+              <remote-alias>COUNTYNS</remote-alias>
+              <ordinal>14</ordinal>
+              <family>counties_by_diocese.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3146</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>GEOID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[GEOID]</local-name>
+              <parent-name>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</parent-name>
+              <remote-alias>GEOID</remote-alias>
+              <ordinal>15</ordinal>
+              <family>counties_by_diocese.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3146</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>NAME</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[NAME]</local-name>
+              <parent-name>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</parent-name>
+              <remote-alias>NAME</remote-alias>
+              <ordinal>16</ordinal>
+              <family>counties_by_diocese.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1266</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>NAMELSAD</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[NAMELSAD]</local-name>
+              <parent-name>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</parent-name>
+              <remote-alias>NAMELSAD</remote-alias>
+              <ordinal>17</ordinal>
+              <family>counties_by_diocese.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1288</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>LSAD</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[LSAD]</local-name>
+              <parent-name>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</parent-name>
+              <remote-alias>LSAD</remote-alias>
+              <ordinal>18</ordinal>
+              <family>counties_by_diocese.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>State_Name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[State_Name]</local-name>
+              <parent-name>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</parent-name>
+              <remote-alias>State_Name</remote-alias>
+              <ordinal>19</ordinal>
+              <family>counties_by_diocese.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>52</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>State_Code</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[State_Code]</local-name>
+              <parent-name>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</parent-name>
+              <remote-alias>State_Code</remote-alias>
+              <ordinal>20</ordinal>
+              <family>counties_by_diocese.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>52</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>FIPS</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[FIPS]</local-name>
+              <parent-name>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</parent-name>
+              <remote-alias>FIPS</remote-alias>
+              <ordinal>21</ordinal>
+              <family>counties_by_diocese.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>52</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>county_state</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[county_state]</local-name>
+              <parent-name>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</parent-name>
+              <remote-alias>county_state</remote-alias>
+              <ordinal>22</ordinal>
+              <family>counties_by_diocese.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3146</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Diocese</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Diocese]</local-name>
+              <parent-name>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</parent-name>
+              <remote-alias>Diocese</remote-alias>
+              <ordinal>23</ordinal>
+              <family>counties_by_diocese.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>183</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Diocese_Detail</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Diocese_Detail]</local-name>
+              <parent-name>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</parent-name>
+              <remote-alias>Diocese_Detail</remote-alias>
+              <ordinal>24</ordinal>
+              <family>counties_by_diocese.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>199</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Province_Detail</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Province_Detail]</local-name>
+              <parent-name>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</parent-name>
+              <remote-alias>Province_Detail</remote-alias>
+              <ordinal>25</ordinal>
+              <family>counties_by_diocese.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>34</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>geometry</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[geometry]</local-name>
+              <parent-name>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</parent-name>
+              <remote-alias>geometry</remote-alias>
+              <ordinal>26</ordinal>
+              <family>counties_by_diocese.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3146</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Province</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Province]</local-name>
+              <parent-name>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</parent-name>
+              <remote-alias>Province</remote-alias>
+              <ordinal>27</ordinal>
+              <family>counties_by_diocese.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>33</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Diocese_Color_Code</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Diocese_Color_Code]</local-name>
+              <parent-name>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</parent-name>
+              <remote-alias>Diocese_Color_Code</remote-alias>
+              <ordinal>28</ordinal>
+              <family>counties_by_diocese.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>143</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='counties_by_diocese.csv' id='counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3'>
+            <properties context=''>
+              <relation connection='textscan.1y476b512yq3q51choopo0je3g2u' name='counties_by_diocese.csv' table='[counties_by_diocese#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='STATEFP' ordinal='0' />
+                  <column datatype='integer' name='COUNTYFP' ordinal='1' />
+                  <column datatype='integer' name='COUNTYNS' ordinal='2' />
+                  <column datatype='integer' name='GEOID' ordinal='3' />
+                  <column datatype='string' name='NAME' ordinal='4' />
+                  <column datatype='string' name='NAMELSAD' ordinal='5' />
+                  <column datatype='integer' name='LSAD' ordinal='6' />
+                  <column datatype='string' name='State_Name' ordinal='7' />
+                  <column datatype='string' name='State_Code' ordinal='8' />
+                  <column datatype='integer' name='FIPS' ordinal='9' />
+                  <column datatype='string' name='county_state' ordinal='10' />
+                  <column datatype='string' name='Diocese' ordinal='11' />
+                  <column datatype='string' name='Diocese_Detail' ordinal='12' />
+                  <column datatype='string' name='Province_Detail' ordinal='13' />
+                  <column datatype='string' name='geometry' ordinal='14' />
+                  <column datatype='string' name='Province' ordinal='15' />
+                  <column datatype='integer' name='Diocese_Color_Code' ordinal='16' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3' table='[Extract].[counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3]' type='table' />
+            </properties>
+          </object>
+          <object caption='countypres_2000-2024_leading_zeroes.csv' id='countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3'>
+            <properties context=''>
+              <relation connection='textscan.1p6epj61mwmg6q1ff281j1ic4y66' name='countypres_2000-2024_leading_zeroes.csv' table='[countypres_2000-2024_leading_zeroes#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='year' ordinal='0' />
+                  <column datatype='string' name='state' ordinal='1' />
+                  <column datatype='string' name='state_po' ordinal='2' />
+                  <column datatype='string' name='county_name' ordinal='3' />
+                  <column datatype='integer' name='county_fips' ordinal='4' />
+                  <column datatype='string' name='office' ordinal='5' />
+                  <column datatype='string' name='candidate' ordinal='6' />
+                  <column datatype='string' name='party' ordinal='7' />
+                  <column datatype='integer' name='candidatevotes' ordinal='8' />
+                  <column datatype='integer' name='totalvotes' ordinal='9' />
+                  <column datatype='date' name='version' ordinal='10' />
+                  <column datatype='string' name='mode' ordinal='11' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3' table='[Extract].[countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='AND'>
+              <expression op='='>
+                <expression op='[state]' />
+                <expression op='[State_Name]' />
+              </expression>
+              <expression op='='>
+                <expression op='[county_name]' />
+                <expression op='[NAME]' />
+              </expression>
+            </expression>
+            <first-end-point object-id='countypres_2000-2024_leading_zeroes.csv_0330234297114FB4B37E66367188A5E3' />
+            <second-end-point object-id='counties_by_diocese.csv_7752B756F2A94E5782CE07CF8A0FD0D3' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Map Lower 48'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='results2000+' name='federated.0e2mqfp084dl3118njkn11mni39e' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0e2mqfp084dl3118njkn11mni39e'>
+            <column-instance column='[state]' derivation='None' name='[none:state:nk]' pivot='key' type='nominal' />
+            <column caption='State' datatype='string' name='[state]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0e2mqfp084dl3118njkn11mni39e].[none:state:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:state:nk]' />
+              <groupfilter function='union'>
+                <groupfilter function='member' level='[none:state:nk]' member='&quot;ALASKA&quot;' />
+                <groupfilter function='member' level='[none:state:nk]' member='&quot;HAWAII&quot;' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0e2mqfp084dl3118njkn11mni39e].[none:state:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Multipolygon' />
+            <encodings>
+              <geometry column='[federated.0e2mqfp084dl3118njkn11mni39e].[Geometry (generated)]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0e2mqfp084dl3118njkn11mni39e].[Latitude (generated)]</rows>
+        <cols>[federated.0e2mqfp084dl3118njkn11mni39e].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{145158EA-6697-4EB1-8286-3F0D419B8001}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Map Lower 48'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0e2mqfp084dl3118njkn11mni39e].[none:Diocese:nk]</field>
+            <field>[federated.0e2mqfp084dl3118njkn11mni39e].[none:county_name:nk]</field>
+            <field>[federated.0e2mqfp084dl3118njkn11mni39e].[none:state:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{5C17234C-49B3-496E-A761-CC782BB215E7}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Map Lower 48' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
