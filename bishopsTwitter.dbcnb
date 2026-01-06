@@ -1,0 +1,51 @@
+cells:
+  - kind: 1
+    languageId: markdown
+    value: Split countypres table into separate tables for each presidential
+      election year (2000, 2004, 2008, 2012, 2016, 2020, 2024). This should make
+      it easier to track down any changes in how states reported their results.
+    metadata: {}
+  - kind: 2
+    languageId: sql
+    value: |
+      SELECT *
+      INTO results2000
+      FROM countypres
+      WHERE year = 2000;
+
+      SELECT *
+      INTO results2004
+      FROM countypres
+      WHERE year = 2004;
+
+      SELECT *
+      INTO results2008
+      FROM countypres
+      WHERE year = 2008;
+
+      SELECT *
+      INTO results2012
+      FROM countypres
+      WHERE year = 2012;
+
+      SELECT *
+      INTO results2016
+      FROM countypres
+      WHERE year = 2016;
+
+      SELECT *
+      INTO results2020
+      FROM countypres
+      WHERE year = 2020;
+
+      SELECT *
+      INTO results2024
+      FROM countypres
+      WHERE year = 2024;
+    metadata: {}
+metadata:
+  conn:
+    id: c9_XhuNfYSo_jVIVW4z_c
+    name: PostgreSQL
+  database: bishopsTwitter
+  schema: public
