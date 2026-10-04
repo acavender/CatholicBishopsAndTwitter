@@ -4,7 +4,7 @@ This project seeks to answer the following questions:
 
 - In presidential elections from 2000 through 2024, which presidential candidates won in each diocese, and by what margin?
 - How active on Twitter (now X) was the diocesan bishop (as of 2023, the last point at which I could gather data)?
-- Is there any correlation between the winner of the election(s) and how active on Twitter the diocesan bishop was?
+- Is there any correlation between the winner of the election(s) in a diocese and how active on Twitter the diocesan bishop was?
 
 An interactive map is available on my Tableau Public profile: [BpTwitter](https://public.tableau.com/app/profile/amycavender/viz/BpTwitter/Diocesanvote?publish=yes). At present, only the 2000-2016 elections are available. There's a problem with my underlying data for 2020 and 2024; those years will be added to the map once I've sorted out the issues.
 
